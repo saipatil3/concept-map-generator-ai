@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Concept Map Generator (OpenRouter)</title>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 700px;
+      margin: auto;
+      padding: 20px;
+    }
+    textarea, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+    #errorBox {
+      color: red;
+      font-weight: bold;
+      display: none;
+    }
+    #diagramContainer {
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>🧠 AI Concept Map Generator (OpenRouter)</h2>
+  <p>Enter a concept or topic below. It will generate a concept map using Mermaid.js</p>
+
+  <textarea id="userInput" rows="5">Photosynthesis converts sunlight, water, and CO2 into glucose and oxygen.</textarea>
+  <button onclick="handleGenerate()">Generate Concept Map</button>
+
+  <div id="errorBox"></div>
+
+  <div id="diagramContainer" style="display:none;">
+    <div class="btn-group">
+      <button onclick="copyMermaidCode()">📋 Copy Mermaid Code</button>
+      <button onclick="downloadPNG()">📸 Export as PNG</button>
+    </div>
+    <div id="output" style="margin-top: 20px;"></div>
+    <textarea id="mermaidCode" rows="6" style="width:100%; margin-top:10px;"></textarea>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
